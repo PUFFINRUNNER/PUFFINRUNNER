@@ -4,6 +4,21 @@ from math import sqrt
 from time import sleep
 hideturtle()
 speed(0)
+a1 = [-100, 100]
+a2 = [0, 100]
+a3 = [100, 100]
+a4 = [-100, 0]
+a5 = [0, 0]
+a6 = [100, 0]
+a7 = [-100, -100]
+a8 = [0, -100]
+a9 = [100, -100]
+b1 = [-125, 100]
+b2 = [-125, 0]
+b3 = [-125, -100]
+b4 = [-100, 125]
+b5 = [0, 125]
+b6 = [100, 125]
 def CROSS():
     left(45)
     pencolor('blue')
@@ -41,21 +56,6 @@ while True:
     width(1)
     up()
     goto(-150, 150)
-    a1 = [-100, 100]
-    a2 = [0, 100]
-    a3 = [100, 100]
-    a4 = [-100, 0]
-    a5 = [0, 0]
-    a6 = [100, 0]
-    a7 = [-100, -100]
-    a8 = [0, -100]
-    a9 = [100, -100]
-    b1 = [-125, 100]
-    b2 = [-125, 0]
-    b3 = [-125, -100]
-    b4 = [-100, 125]
-    b5 = [0, 125]
-    b6 = [100, 125]
     down()
     width(2.5)
     for G in range(4):
@@ -320,25 +320,22 @@ while True:
                 if ADD5[O] == None:
                     if O == 0:
                         L[0][2] = False
-                    elif O == 1:
-                        L[1][1] = False
-                    else:
-                        L[2][0] = False
-                    if O == 0:
                         penup()
                         goto(a3[0], a3[1])
                         down()
                         CIRCLE()
                     elif O == 1:
+                        L[1][1] = False
                         penup()
                         goto(a5[0], a5[1])
                         down()
                         CIRCLE()
                     elif O == 2:
+                        L[2][0] = False
                         penup()
                         goto(a7[0], a7[1])
                         down()
-                        CIRCLE()
+                        CIRCLE()           
                     break
         elif False not in L[0] and L[0].count(True) == 2:
             while True:
@@ -493,25 +490,22 @@ while True:
                 if ADD5[O] == None:
                     if O == 0:
                         L[0][2] = False
-                    elif O == 1:
-                        L[1][1] = False
-                    else:
-                        L[2][0] = False
-                    if O == 0:
                         penup()
                         goto(a3[0], a3[1])
                         down()
                         CIRCLE()
                     elif O == 1:
+                        L[1][1] = False
                         penup()
                         goto(a5[0], a5[1])
                         down()
                         CIRCLE()
                     elif O == 2:
+                        L[2][0] = False
                         penup()
                         goto(a7[0], a7[1])
                         down()
-                        CIRCLE()
+                        CIRCLE()           
                     break
         else:
             if True not in L[0]:
@@ -648,29 +642,28 @@ while True:
                         pendown()
                         CIRCLE()
             elif True not in ADD5:
-                O = randint(0, 2)
-                if ADD5[O] == None:
-                    if O == 0:
-                        L[0][2] = False
-                    elif O == 1:
-                        L[1][1] = False
-                    elif O == 2:
-                        L[2][0] = False
-                    if O == 0:
-                        penup()
-                        goto(a3[0],a3[1])
-                        pendown()
-                        CIRCLE()
-                    elif O == 1:
-                        penup()
-                        goto(a5[0], a5[1])
-                        pendown()
-                        CIRCLE()
-                    else:
-                        penup()
-                        goto(a7[0], a7[1])
-                        pendown()
-                        CIRCLE()
+                while True:
+                    O = randint(0, 2)
+                    if ADD5[O] == None:
+                        if O == 0:
+                            L[0][2] = False
+                            penup()
+                            goto(a3[0], a3[1])
+                            down()
+                            CIRCLE()
+                        elif O == 1:
+                            L[1][1] = False
+                            penup()
+                            goto(a5[0], a5[1])
+                            down()
+                            CIRCLE()
+                        elif O == 2:
+                            L[2][0] = False
+                            penup()
+                            goto(a7[0], a7[1])
+                            down()
+                            CIRCLE()           
+                        break
             else:
                 while True:
                     O = randint(0, 2)
@@ -727,25 +720,25 @@ while True:
 
 #######################################################################################################################################################
 
-                                           #XNN
-        ADD1 = [L[0][0], L[1][0], L[2][0]] #XNN
-                                           #XNN
+                                           #    XNN
+        ADD1 = [L[0][0], L[1][0], L[2][0]] #    XNN
+                                           #    XNN
     
-                                           #NXN
-        ADD2 = [L[0][1], L[1][1], L[2][1]] #NXN
-                                           #NXN
+                                           #    NXN
+        ADD2 = [L[0][1], L[1][1], L[2][1]] #    NXN
+                                           #    NXN
                                        
-                                           #NNX
-        ADD3 = [L[0][2], L[1][2], L[2][2]] #NNX
-                                           #NNX
+                                           #    NNX
+        ADD3 = [L[0][2], L[1][2], L[2][2]] #    NNX
+                                           #    NNX
                                        
-                                           #XNN
-        ADD4 = [L[0][0], L[1][1], L[2][2]] #NXN
-                                           #NNX
+                                           #    XNN
+        ADD4 = [L[0][0], L[1][1], L[2][2]] #    NXN
+                                           #    NNX
                                        
-                                           #NNX
-        ADD5 = [L[0][2], L[1][1], L[2][0]] #NXN
-                                           #XNN
+                                           #    NNX
+        ADD5 = [L[0][2], L[1][1], L[2][0]] #    NXN
+                                           #    XNN
 
 #######################################################################################################################################################
 
@@ -811,6 +804,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD1[0] == False and ADD1[1] == False and ADD1[2] == False:
             print("PC won!")
@@ -821,6 +815,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD2[0] == True and ADD2[1] == True and ADD2[2] == True:
             print("Player won!")
@@ -831,6 +826,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD2[0] == False and ADD2[1] == False and ADD2[2] == False:
             print("PC won!")
@@ -841,6 +837,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD3[0] == True and ADD3[1] == True and ADD3[2] == True:
             print("Player won!")
@@ -861,6 +858,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD4[0] == True and ADD4[1] == True and ADD4[2] == True:
             print("Player won!")
@@ -1067,6 +1065,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD1[0] == False and ADD1[1] == False and ADD1[2] == False:
             print("PC won!")
@@ -1077,6 +1076,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD2[0] == True and ADD2[1] == True and ADD2[2] == True:
             print("Player won!")
@@ -1087,6 +1087,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD2[0] == False and ADD2[1] == False and ADD2[2] == False:
             print("PC won!")
@@ -1097,6 +1098,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD3[0] == True and ADD3[1] == True and ADD3[2] == True:
             print("Player won!")
@@ -1107,6 +1109,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD3[0] == False and ADD3[1] == False and ADD3[2] == False:
             print("PC won!")
@@ -1117,6 +1120,7 @@ while True:
             right(90)
             pendown()
             forward(250)
+            left(90)
             break
         elif ADD4[0] == True and ADD4[1] == True and ADD4[2] == True:
             print("Player won!")
@@ -1171,6 +1175,4 @@ while True:
     print("New game in 15 seconds.")
     sleep(15)
     clear()
-    up()
-    goto(0, 0)
     down()
